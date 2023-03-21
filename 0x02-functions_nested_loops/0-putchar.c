@@ -1,5 +1,4 @@
-#include <main.h>
-#include <string.h>
+#include "main.h"
 
 /**
  * main - prints the word _putchar
@@ -8,10 +7,10 @@
 
 int main(void)
 {
-	char word[10] = "putchar";
+	char word[8] = "putchar";
 	int i = 0;
 
-	while (i <= strlen(word))
+	while (i < 8)
 	{
 		_putchar(word[i]);
 		i++;
