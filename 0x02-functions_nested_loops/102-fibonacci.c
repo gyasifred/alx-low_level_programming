@@ -14,7 +14,7 @@ int main(void)
 	num2 = 1;
 	counter = 1;
 
-	while (counter <= 50)
+	while (counter < 50)
 	{
 		sum = num1 + num2;
 		printf("%li, ", sum);
