@@ -6,12 +6,12 @@
   */
 int main(void)
 {
-	int counter = 1;
-	float num1, num2, sum;
+	int counter;
+	float sum, num1, num2;
 
 	num1 = 0;
 	num2 = 1;
-	sum = 0;
+	counter = 1;
 
 	while (counter < 98)
 	{
@@ -22,6 +22,6 @@ int main(void)
 		counter++;
 	}
 	sum = num1 + num2;
-	printf("%.0f\n", sum);
+	printf("%0.f\n", sum);
 	return (0);
 }
