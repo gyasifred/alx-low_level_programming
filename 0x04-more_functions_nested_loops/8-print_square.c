@@ -7,20 +7,21 @@
  */
 void print_square(int size)
 {
-	int i, j;
+	int row, col;
 
-	i = 0;
-
-	while (i < size)
+	if (size > 0)
 	{
-		j = 0;
-		while (j < size)
+		for (row = 0; row < size; row++)
 		{
-			_putchar(35);
-			j++;
+			for (col = 0; col < size; col++)
+			{
+				_putchar(35);
+			}
+			_putchar(10);
 		}
-		_putchar(10);
-		i++;
 	}
-	_putchar(10);
+	else
+	{
+		_putchar(10);
+	}
 }
