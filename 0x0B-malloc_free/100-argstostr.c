@@ -27,33 +27,33 @@ int _strlen(char *string)
   */
 char *argstostr(int ac, char **av)
 {
-	char *arg;
-	int i, j, k, len;
+	int length, i, j, k;
+	char *str;
 
 	if (ac == 0 || av == NULL)
-	{
 		return (NULL);
-	}
+
+	length = 0;
 	for (i = 0; i < ac; i++)
 	{
-		len += _strlen(av[i]) + 1;
+		length += _strlen(av[i]) + 1;
 	}
-	arg = malloc(sizeof(char) * len);
-	if (arg == NULL)
-	{
+
+	str = malloc(sizeof(char) * length + 1);
+	if (str == NULL)
 		return (NULL);
-	}
+
 	k = 0;
 	for (i = 0; i < ac; i++)
 	{
 		for (j = 0; j < _strlen(av[i]); j++)
 		{
-			arg[k] = av[i][j];
+			str[k] = av[i][j];
 			k++;
 		}
-		arg[k] = '\n';
+		str[k] = '\n';
 		k++;
 	}
-	arg[k] = '\0';
-	return (arg);
+	str[k] = '\0';
+	return (str);
 }
