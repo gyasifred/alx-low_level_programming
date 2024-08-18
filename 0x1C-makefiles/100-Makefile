@@ -1,0 +1,35 @@
+# Variables
+CC = gcc
+SRC = $(wildcard *.c)
+OBJ = $(SRC:.c=.o)
+NAME = school
+RM = rm -f
+CFLAGS = -Wall -Werror -Wextra -pedantic
+
+# Default rule: all
+all: $(NAME)
+
+# Link the object files to create the executable
+$(NAME): $(OBJ)
+	@$(CC) $(OBJ) -o $(NAME)
+
+# Recompile only updated source files
+$(OBJ): m.h
+
+# Clean rules
+clean:
+	@$(RM) *~ \#*\# $(NAME)
+
+oclean:
+	@$(RM) $(OBJ)
+
+fclean: clean oclean
+
+# Force recompilation of all source files
+re: fclean all
+
+# Prevent make from using built-in rules
+.SUFFIXES:
+
+# Ensure rules do not interfere with files of the same name
+.PHONY: all clean oclean fclean re
